@@ -1,0 +1,12 @@
+{
+    "authors": [
+        "David Suppiger"
+    ],
+    "copyright": "Copyright © 2019, David Suppiger",
+    "description": "A command line tool to check if your passwords have been pwned.",
+    "license": "proprietary",
+    "name": "pwnedpasswordssearch",
+    "dependencies": {
+        "requests": "~>1.0.5"
+    }
+}

@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/pwnedpasswordssearch
+pwnedpasswordssearch.so
+pwnedpasswordssearch.dylib
+pwnedpasswordssearch.dll
+pwnedpasswordssearch.a
+pwnedpasswordssearch.lib
+pwnedpasswordssearch-test-*
+*.exe
+*.o
+*.obj
+*.lst

@@ -38,6 +38,10 @@ void main(string[] args)
                 writeln("Invalid CSV. Please provide a 'password' column.");
                 exit(1);
             }
+            if (record.keys.length < 2)
+            {
+                writeln("Invalid CSV. Please provide one additional column e.g. with the URL, service or username to which the password belongs.");
+            }
         }
 
         auto pwHash = toHexString(sha1Of(record[pwHeader]));

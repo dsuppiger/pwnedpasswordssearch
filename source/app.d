@@ -18,6 +18,8 @@ void main(string[] args)
     string inputFile = args[1];
     auto data = readText(inputFile);
 
+    auto numPwnedPasswords = 0;
+    auto numFailedRequests = 0;
     auto rq = new Request();
     string pwHeader = null;
     foreach (record; csvReader!(string[string])(data, null))
@@ -59,6 +61,7 @@ void main(string[] args)
                 {
                     if (key != pwHeader) writeln(key ~ ": " ~ record[key]);
                 }
+                numPwnedPasswords++;
             }
         }
         else
@@ -68,6 +71,13 @@ void main(string[] args)
             {
                 if (key != pwHeader) writeln(key ~ ": " ~ record[key]);
             }
+            numFailedRequests++;
         }
+    }
+
+    if (numFailedRequests == 0
+        && numPwnedPasswords == 0)
+    {
+        writeln("Phew! No passwords have been pwned.");
     }
 }
